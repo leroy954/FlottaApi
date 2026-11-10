@@ -1,0 +1,6 @@
+@FlottaApi_HostAddress = http://localhost:5136
+
+GET {{FlottaApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
