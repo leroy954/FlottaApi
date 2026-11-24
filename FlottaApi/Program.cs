@@ -14,6 +14,14 @@ namespace FlottaApi
 
             builder.Services.AddDbContext<FlottaContext>(option => { string conn = builder.Configuration.GetConnectionString("FlottaConnection"); option.UseMySql(conn, ServerVersion.AutoDetect(conn)); });
 
+            builder.Services.AddAuthentication("Bearer")
+            .AddJwtBearer("Bearer", options =>
+            {
+                options.Authority = "http://localhost:5000"; // Az IdentityServer címe
+                options.RequireHttpsMetadata = false;
+                options.TokenValidationParameters.ValidateAudience = false; // Kezdésnek kikapcsolva
+            });
+
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();

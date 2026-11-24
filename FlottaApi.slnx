@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="FlottaApi/FlottaApi.csproj" />
+  <Project Path="FlottaIdentity/FlottaIdentity.csproj" Id="896bf2fc-4657-440e-8cbf-14a82e724f22" />
 </Solution>
